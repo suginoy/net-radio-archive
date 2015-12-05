@@ -20,8 +20,7 @@ production:
     # radikoで録音するチャンネルを設定してください
     # channel code (QRRなど) についてはREADME.mdのFAQを参照してください
     radiko_channels:
-        - QRR # bunka housou
-        - LFR # nippon housou
+        - BAYFM78
 
     # trueの場合、音声のみのコンテンツ(音泉、アニたま、Radiko)を保存時に強制的にmp4へ変換します(再エンコードはかけないので音声は劣化しません)
     # Googleフォトなどにバックアップする際に便利です
@@ -55,7 +54,6 @@ production:
 
 development:
     radiko_channels:
-        - QRR # bunka housou
-        - LFR # nippon housou
+        - BAYFM78
     archive_dir: /tmp/net-radio-archive
     working_dir: /tmp/net-radio-working
