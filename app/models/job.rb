@@ -10,6 +10,13 @@ class Job < ActiveRecord::Base
     failed: 'failed',
   }
 
+  before_validation :kalafina_fan
+
+  def kalafina_fan
+    self.state = STATE[:done] unless kalafina_club?
+    self
+  end
+
   def length_sec
     (self.end - self.start).to_i
   end
@@ -38,5 +45,11 @@ class Job < ActiveRecord::Base
       self.state = Job::STATE[:scheduled]
       self.save!
     end
+  end
+
+  private
+
+  def kalafina_club?
+    self.title.match(/Kalafina/)
   end
 end
